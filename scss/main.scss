@@ -1,0 +1,220 @@
+@import './config';
+
+body{
+    background-color: $white;
+    position: relative;
+
+    .bg_pattern_top{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%;
+    }
+    .bg_pattern_bottom{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .bg_pattern_top_mobile{
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+    background-color: inherit;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $dark-magenta;
+    border-radius: 32px;
+}
+
+
+.container{
+    width: 70%;
+    margin: 0 auto;
+    padding: 32px 0;
+
+    .showcase{
+        @include gridDisplay(repeat(2, 1fr), 16px);
+        padding: 64px 0;
+
+        .text{
+            h1{
+                font-size: 36px;
+                color: $dark-magenta;
+                margin-bottom: 16px;
+                line-height: 1;
+            }
+
+            p{
+                line-height: 1.4;
+                font-size: 15px;
+                color: $dark-gray-magenta;
+            }
+        }
+
+        .ratings{
+            div{
+                background-color: $light-gray-magenta;
+                padding: 10px;
+                border-radius: 5px;
+                width: 70%;
+
+                img{
+                    width: 4%;
+                    margin-right: 2px;
+                }
+                
+                span{
+                    color: $dark-magenta;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+
+            div:nth-of-type(2){
+                margin: 16px 0 16px 64px;
+            }
+
+            div:nth-of-type(3){
+                margin-left: 120px;
+            }
+        }
+    }
+
+    .testimonials{
+        @include gridDisplay(repeat(3, 1fr), 16px);
+        padding: 64px 0;
+
+        .card{
+            background-color: $dark-magenta;
+            padding: 16px;
+            border-radius: 5px;
+            height: 200px;
+            overflow: hidden;
+
+            .profile{
+                @include flexDisplay(row, center, flex-start);
+                margin-bottom: 32px;
+                
+                img{
+                    width: 15%;
+                    margin-right: 16px;
+                    border-radius: 50%;
+                }
+                
+                h4{
+                    color: $white;
+                    font-size: 16px;
+                    margin-bottom: 6px;
+                }
+    
+                .title{
+                    display: block;
+                    color: $soft-pink;
+                    font-size: 12px;
+                }
+            }
+
+            p{
+                line-height: 1.4;
+                color: $white;
+                font-size: 13px;
+            }
+        }
+        .card:nth-of-type(2){
+            margin-top: 16px;
+        }
+        .card:nth-of-type(3){
+            margin-top: 32px;
+        }
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1160px){
+    .container{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1066px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 980px){
+    body{
+        .bg_pattern_top_mobile{
+            display: block;
+        }
+    }
+    
+    .container{
+        padding: 0;
+
+        .showcase{
+            @include gridDisplay(none, 16px);
+
+            .ratings{
+                div{
+                    padding: 10px;
+                    border-radius: 5px;
+                    width: 100%;
+                    text-align: center;
+    
+                    img{
+                        width: 5%;
+                        margin-right: 5px;
+                    }
+                    
+                    span{
+                        display: block;
+                        margin-top: 10px;
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+                div:nth-of-type(2){
+                    margin: 16px 0 !important;
+                }
+    
+                div:nth-of-type(3){
+                    margin-left: 0 !important;
+                }
+            }
+        }
+
+        .testimonials{
+            @include gridDisplay(none, 16px);
+            padding: 64px 0;
+
+            .profile{
+                img{
+                    width: 10% !important;
+                }
+            }
+    
+            .card{
+                height: auto;
+            }
+            .card:nth-of-type(2){
+                margin-top: 0;
+            }
+            .card:nth-of-type(3){
+                margin-top: 0;
+            }
+        }
+    }
+}

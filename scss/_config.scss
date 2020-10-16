@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+input:focus, button:focus{
+    outline: none;
+}
+
+$dark-magenta: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+
+$dark-gray-magenta: hsl(303, 10%, 53%);
+$light-gray-magenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+@mixin transitionEffect {
+    transition: all 0.3s ease;
+}
+
+@mixin gridDisplay($columns, $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    gap: $gap;
+}
+
+@mixin flexDisplay($direction, $align, $justify) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
